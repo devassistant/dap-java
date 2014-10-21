@@ -2,9 +2,7 @@ fullname: Simple JavaServer Faces Project
 
 dependencies:
 - use: super.dependencies
-- rpm: ['mojarra','jetty-server','jetty-webapp','tomcat-el-2.2-api','tomcat-jsp-2.2-api']
-- rpm: ['tomcat-servlet-3.0-api','maven-local','maven-war-plugin','maven-shade-plugin']
-- rpm: ['maven-resources-plugin','maven-clean-plugin','junit']
+- rpm: ['maven']
 
 dependencies_eclipse:
 - use: eclipse.dependencies_java
@@ -26,15 +24,8 @@ files:
     source: .classpath
   eclipseproject: &eclipseproject
     source: .eclipseproject
-  runscript: &runscript
-    source: run
-  spec: &spec
-    source: devassistant-jsf-example.spec
-  gitignore: &gitignore
-    source: .gitignore
   pom: &pom
     source: pom.xml
-
 
 run:
 - $dirname~: $(dirname "$name")
@@ -48,20 +39,14 @@ run:
 - cl: cd "${name}"
 - cl: cp *classpath .
 - cl: cp *eclipseproject .
-- cl: cp *runscript .
 - cl: cp *pom .
-- cl: cp *spec .
-- cl: cp *gitignore .
 - cl: cd *jsfexample
 - cl: cp -r ./src/ "${abspath}"
 - cl: cd "${abspath}"
-# create local git repository
 - log_i: 'Creating git repository'
 - use: git_init_add_commit.run
-# create tarball
-- log_i: 'Creating tarball'
-#- cl: git archive --format tar HEAD | gzip -9 > JSFexample.tar.gz
-- cl: tar czf devassistant-jsf-example.tar.gz src/ pom.xml run
+- log_i: 'Building project'
+- cl: mvn package
 - log_i: 'Done'
 - if $eclipse:
   - use: eclipse.run_java
