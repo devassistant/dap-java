@@ -1,0 +1,12 @@
+package_name: java
+version: 0.10.0dev
+license: GPLv2+
+authors: [Bohuslav Kabrda <bkabrda@redhat.com>, Michal Srb <msrb@redhat.com>]
+homepage: https://github.com/devassistant/dap-java
+summary: Java assistants
+bugreports: https://github.com/devassistant/dap-java/issues
+dependencies:
+  - common_args
+  - eclipse
+description: |
+    Kickstarts new Java projects
