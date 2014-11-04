@@ -8,5 +8,6 @@ bugreports: https://github.com/devassistant/dap-java/issues
 dependencies:
   - common_args
   - eclipse
+  - git
 description: |
     Kickstarts new Java projects
