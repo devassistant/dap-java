@@ -51,6 +51,6 @@ run:
 - log_i: 'Done'
 - if $eclipse:
   - use: eclipse.run_java
-- if $github:
+- if defined $github:
   - log_i: 'Push to GitHub repository'
   - github: create_and_push
