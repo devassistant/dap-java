@@ -9,5 +9,6 @@ dependencies:
   - common_args
   - eclipse
   - git
+  - github
 description: |
     Kickstarts new Java projects
