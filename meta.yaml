@@ -1,5 +1,5 @@
 package_name: java
-version: 0.10.0dev
+version: 0.10.0
 license: GPLv2+
 authors: [Bohuslav Kabrda <bkabrda@redhat.com>, Michal Srb <msrb@redhat.com>]
 homepage: https://github.com/devassistant/dap-java
@@ -11,4 +11,6 @@ dependencies:
   - git
   - github
 description: |
-    Kickstarts new Java projects
+    Kickstarts new Java projects.
+
+    Currently supports Maven and JavaServer Faces projects.
