@@ -56,3 +56,4 @@ run:
   - github: create_and_push  - github:
     - create_and_push
     - reponame: $basename
+      login: $github
