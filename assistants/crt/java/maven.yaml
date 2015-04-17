@@ -53,7 +53,7 @@ run:
   - use: eclipse.run_java
 - if defined $github:
   - log_i: 'Push to GitHub repository'
-  - github: create_and_push  - github:
+  - github:
     - create_and_push
     - reponame: $basename
       login: $github
